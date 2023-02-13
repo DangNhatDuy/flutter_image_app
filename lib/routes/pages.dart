@@ -10,5 +10,10 @@ abstract class Pages {
       page: () => HomePage(),
       binding: HomeBinding(),
     ),
+    GetPage(
+      name: Routes.PHOTO_VIEW,
+      page: () => const PhotoViewPage(),
+      binding: PhotoViewBinding(),
+    ),
   ];
 }

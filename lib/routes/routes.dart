@@ -4,4 +4,5 @@ part of './pages.dart';
 
 abstract class Routes {
   static const HOME = '/home';
+  static const PHOTO_VIEW = '/photo_view';
 }
