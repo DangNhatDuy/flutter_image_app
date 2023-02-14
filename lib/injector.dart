@@ -4,10 +4,17 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class InitialBinding extends Bindings {
+  InitialBinding._();
+
+  static final InitialBinding instance = InitialBinding._();
+
   @override
-  void dependencies() async {
+  void dependencies() {
     Get.put<BaseClient>(BaseClient());
     Get.put<PhotoService>(PhotoService(Get.find<BaseClient>()));
+  }
+
+  Future<void> initData() async {
     await Get.putAsync<SharedPreferences>(() async {
       final prefs = await SharedPreferences.getInstance();
       return prefs;

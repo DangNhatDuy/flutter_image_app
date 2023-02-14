@@ -5,8 +5,9 @@ import 'package:get/get.dart';
 
 import 'routes/pages.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await InitialBinding.instance.initData();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
     runApp(const MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       getPages: Pages.pages,
       initialRoute: Routes.HOME,
-      initialBinding: InitialBinding(),
+      initialBinding: InitialBinding.instance,
     );
   }
 }
